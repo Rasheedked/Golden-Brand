@@ -1,10 +1,10 @@
 /* General Styles for Products Pages */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f4f4f9;
+    background-color: #f9f9f9;
     overflow-x: hidden;
 }
 
@@ -12,143 +12,109 @@ body {
 header {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Space out the logo and navbar */
+    justify-content: space-between;
     padding: 10px 20px;
-    background-color: rgba(19, 7, 7, 0.743); /* Match navbar background */
-    position: relative;
-    z-index: 1000;
+    background-color: rgba(19, 7, 7, 0.85);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Logo Styling */
 .logo img {
-    height: 90px; /* Ensure consistent size */
-    margin-right: 20px; /* Add spacing between the logo and navbar */
+    height: 70px;
 }
 
-
-/* Navbar Styles */
 .navbar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    z-index: 1000;
     display: flex;
-    justify-content:center; /* Align items to the right */
+    justify-content: center;
     align-items: center;
-    margin-top: 30px;
-   
-    padding: 10px 20px;
-    box-sizing: border-box; /* Include padding in width */
-    flex-grow: 1; /* Allow the navbar to grow and occupy space */
 }
 
-/* Nav Links Styling */
 .nav-links {
     list-style: none;
     display: flex;
+    gap: 20px;
     margin: 0;
     padding: 0;
 }
 
-.nav-links li {
-    margin-left: 10px; /* Space between boxes */
-}
-
 .nav-links a {
-    display: block; /* Make the anchor a block for box styling */
     text-decoration: none;
-    font-size: 25px;
-    font-family:"Playfair Display", serif;
     color: white;
-    background-color: #f8b400; /* Gold color */
-    padding: 10px 15px;
+    background-color: #f8b400;
+    padding: 10px 20px;
     border-radius: 5px;
     transition: background-color 0.3s, transform 0.3s;
-    text-align: center;
     font-weight: bold;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
 }
 
 .nav-links a:hover {
-    background-color: #cc9100; /* Darker gold on hover */
-    transform: scale(1.1); /* Slight zoom effect */
+    background-color: #cc9100;
+    transform: scale(1.05);
 }
 
-
-/* Page Header */
-.page-header {
-    text-align: center;
-    padding: 100px 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 80px;
-}
-
-.page-header h1 {
-    font-size: 3rem;
-    color: #111;
-    margin-bottom: 10px;
-}
-
-.page-header p {
-    font-size: 1.2rem;
-    color: #555;
-}
-
-/* Product Cards Section */
+/* Products Section */
 .products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #ffffff;
+}
+
+.products h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.products p {
+    font-size: 1.2rem;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    padding: 50px 20px;
-    background-color: #f4f4f9;
+    padding: 0 20px;
 }
 
 .product-card {
     background-color: #fff;
-    border: 1px solid #ddd;
     border-radius: 8px;
-    width: 300px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .product-card img {
     width: 100%;
-    height: auto;
-    border-bottom: 1px solid #ddd;
+    height: 200px;
+    object-fit: cover;
 }
 
 .product-card h3 {
     font-size: 1.5rem;
-    color: #111;
     margin: 15px 0;
+    color: #111;
 }
 
 .product-card p {
     font-size: 1rem;
     color: #555;
-    padding: 0 10px;
-    margin-bottom: 15px;
+    padding: 0 15px 15px;
 }
 
 .product-card button {
     background-color: #f8b400;
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 10px 20px;
+    margin-bottom: 15px;
     border-radius: 5px;
-    font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -162,18 +128,17 @@ footer {
     background-color: #111;
     color: white;
     text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
+    padding: 15px 0;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .products {
-        flex-direction: column;
-        align-items: center;
+    .product-grid {
+        grid-template-columns: 1fr;
     }
 
-    .product-card {
-        width: 90%;
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
     }
 }
