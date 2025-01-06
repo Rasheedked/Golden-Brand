@@ -35,7 +35,7 @@ header {
     display: flex;
     justify-content:center; /* Align items to the right */
     align-items: center;
-    margin-top: 30px;
+    margin-top: 25px;
    
     padding: 10px 20px;
     box-sizing: border-box; /* Include padding in width */
