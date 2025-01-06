@@ -8,23 +8,42 @@ body {
     overflow-x: hidden;
 }
 
+/* Header Styling */
 header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background-color: rgba(17, 17, 17, 0.9);
+    justify-content: space-between; /* Space out the logo and navbar */
     padding: 10px 20px;
+    background-color: rgba(19, 7, 7, 0.743); /* Match navbar background */
+    position: relative;
+    z-index: 1000;
+}
+
+/* Logo Styling */
+.logo img {
+    height: 90px; /* Ensure consistent size */
+    margin-right: 20px; /* Add spacing between the logo and navbar */
+}
+
+
+/* Navbar Styles */
+.navbar {
     position: fixed;
     top: 0;
+    right: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content:center; /* Align items to the right */
+    align-items: center;
+    margin-top: 30px;
+   
+    padding: 10px 20px;
+    box-sizing: border-box; /* Include padding in width */
+    flex-grow: 1; /* Allow the navbar to grow and occupy space */
 }
 
-header .logo img {
-    height: 70px;
-}
-
+/* Nav Links Styling */
 .nav-links {
     list-style: none;
     display: flex;
@@ -33,25 +52,29 @@ header .logo img {
 }
 
 .nav-links li {
-    margin-left: 15px;
+    margin-left: 10px; /* Space between boxes */
 }
 
 .nav-links a {
+    display: block; /* Make the anchor a block for box styling */
     text-decoration: none;
+    font-size: 25px;
+    font-family:"Playfair Display", serif;
     color: white;
-    font-family: "Poppins", sans-serif;
-    background-color: #f8b400;
-    padding: 10px 20px;
+    background-color: #f8b400; /* Gold color */
+    padding: 10px 15px;
     border-radius: 5px;
     transition: background-color 0.3s, transform 0.3s;
+    text-align: center;
     font-weight: bold;
-    display: block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
 }
 
 .nav-links a:hover {
-    background-color: #cc9100;
-    transform: scale(1.1);
+    background-color: #cc9100; /* Darker gold on hover */
+    transform: scale(1.1); /* Slight zoom effect */
 }
+
 
 /* Page Header */
 .page-header {
